@@ -1,6 +1,6 @@
 ﻿Shader "UI/RadialGradientShader"
 {
-      Properties
+    Properties
     {
         [PerRendererData] _MainTex ("MainTexture", 2D) = "white" {}
         _StencilComp ("Stencil Comparison", Float) = 8
@@ -13,7 +13,7 @@
     }
     SubShader
     {
-         Tags
+        Tags
         { 
             "Queue"="Transparent" 
             "IgnoreProjector"="True" 
@@ -51,8 +51,8 @@
                 float4 vertex : POSITION;
                 float4 color : COLOR;
                 float2 uv : TEXCOORD0;
-                float2 uv1 : TEXCOORD1;
-                float2 center : NORMAL;
+                float2 center : TEXCOORD1;
+                float3 params : NORMAL;
             };
 
             struct v2f
@@ -60,8 +60,8 @@
                 float4 vertex : SV_POSITION;
                 float4 color : COLOR;
                 float2 uv : TEXCOORD0;
-                float2 uv1 : TEXCOORD1;
-                float2 center : NORMAL;
+                float2 center : TEXCOORD1;
+                float3 params : NORMAL;
             };
 
             sampler2D _MainTex;
@@ -80,22 +80,31 @@
 			}
             v2f vert (appdata v)
             {
-               
+                const float PI = 3.14159;
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.color = v.color;
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                o.uv1 = v.uv1;
+
+                float s = sin (2 * PI * (-v.params.z) /360);
+                float c = cos (2 * PI * (-v.params.z) /360);
+                float2x2 rotationMatrix = float2x2( c, -s, s, c);
+                rotationMatrix *=0.5;
+                rotationMatrix +=0.5;
+                rotationMatrix = rotationMatrix * 2-1;
+                o.uv.xy = mul (o.uv.xy - v.center.xy, rotationMatrix );
+
+                o.params = v.params;
                 o.center = v.center;
                 return o;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                float x =  (i.uv.x - i.center.x);
-                float y =  (i.uv.y - i.center.y);
-                float r1 = lerp(0.01, i.uv1.y, i.uv1.x / 360);
-                float r2 = lerp(0.01, i.uv1.y, 1 - i.uv1.x / 360);
+                float x =  i.uv.x;
+                float y =  i.uv.y;
+                float r1 = i.params.x / 2;
+                float r2 = i.params.y / 2;
                 float2 uv = sqrt(x * x / r1 + y * y / r2);
                 fixed4 col = SampleSpriteTexture (uv) * i.color; 
                 return col;

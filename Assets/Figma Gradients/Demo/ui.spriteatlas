@@ -32,16 +32,28 @@ SpriteAtlas:
     packables:
     - {fileID: 2800000, guid: a8731108f74a4cb40a3918ca8e2b110c, type: 3}
     - {fileID: 2800000, guid: f4b7b2e72f743b540b1b68ada9ff17f7, type: 3}
-    totalSpriteSurfaceArea: 1280
+    - {fileID: 2800000, guid: 4124500719bf735428b82bdf7704de25, type: 3}
+    - {fileID: 2800000, guid: a7b504c09afcc624e8eabf52e5a1b30a, type: 3}
+    - {fileID: 2800000, guid: a170740f9acbefa41854bca99157c317, type: 3}
+    - {fileID: 2800000, guid: a6e792607a8feb84d88ab418f0f511f1, type: 3}
+    totalSpriteSurfaceArea: 3056399
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: a6e792607a8feb84d88ab418f0f511f1, type: 3}
+  - {fileID: 21300000, guid: a7b504c09afcc624e8eabf52e5a1b30a, type: 3}
+  - {fileID: 21300000, guid: 4124500719bf735428b82bdf7704de25, type: 3}
   - {fileID: 21300000, guid: f4b7b2e72f743b540b1b68ada9ff17f7, type: 3}
   - {fileID: 21300000, guid: a8731108f74a4cb40a3918ca8e2b110c, type: 3}
+  - {fileID: 21300000, guid: a170740f9acbefa41854bca99157c317, type: 3}
   m_PackedSpriteNamesToIndex:
+  - big_gradient_diamond
+  - big_gradient_radial
+  - big_gradient
   - test_gradient
   - button_border
+  - big_gradient_angular
   m_Tag: ui
   m_IsVariant: 0

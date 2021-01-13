@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,10 +8,11 @@ namespace Nox7atra.UIFigmaGradients
 {
     public class UIFigmaGradientRadialDrawer : UIFigmaGradientLinearDrawer
     {
-
-        [SerializeField] private Vector2 _Center;
+        [SerializeField] protected Vector2 _Center;
         [Range(0.01f, 10)]
-        [SerializeField] private float _Radius = 1;
+        [SerializeField] protected float _Radius1 = 1;
+        [Range(0.01f, 10)]
+        [SerializeField] protected float _Radius2 = 1;
         protected override Material GradientMaterial => new Material(Shader.Find("UI/RadialGradientShader"));
 
         protected override void GenerateHelperUvs(VertexHelper vh)
@@ -18,8 +20,8 @@ namespace Nox7atra.UIFigmaGradients
             UIVertex vert = new UIVertex();
             for (int i = 0; i < vh.currentVertCount; i++) {
                 vh.PopulateUIVertex(ref vert, i);
-                vert.normal = _Center;
-                vert.uv1 = new Vector2(_Angle, _Radius);
+                vert.normal = new Vector3(_Radius1, _Radius2, _Angle);
+                vert.uv1 = new Vector2(_Center.x, 1 - _Center.y);
                 vh.SetUIVertex(vert, i);
             }
         }
