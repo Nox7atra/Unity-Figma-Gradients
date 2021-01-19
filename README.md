@@ -43,9 +43,9 @@ __UIFigmaGradientRadialDrawer__ - spherical gradient
 __UIFigmaGradinetDiamondDrawer__ - diamond gradient
 
 ## Import from CSS
-There is a dedicated function for __UIFigmaGradientLinearDrawer__ to import parameters using CSS from Figma. To do this, copy the line from the _background field: _
+There is a dedicated function for __UIFigmaGradientLinearDrawer__ to import parameters using CSS from Figma. To do this, copy the line from the _background field:_
 
-Example line: _linear-gradient (0deg, # FECC66 0%, # F83062 100%); _
+Example line: _linear-gradient (0deg, # FECC66 0%, # F83062 100%);_
 
 This function is for other types of gradients in development.
 ## Useful class fields:
