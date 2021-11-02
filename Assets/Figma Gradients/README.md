@@ -2,6 +2,8 @@
 ![github-small](cover.jpg)
 
 Библиотека реализующая градиенты Figma в UI в Unity с помощью шейдеров для уменьшения веса билда и отсутствия артефактов сжатия на градиентах.
+Установка через Unity Package Manager / Add package from git URL:
+https://github.com/Nox7atra/Unity-Figma-Gradients.git?path=/Assets/Figma%20Gradients
 
 Для использования необходимо добавить компонент соответствующего типа градиента на RectTransform внутри канваса.
 
