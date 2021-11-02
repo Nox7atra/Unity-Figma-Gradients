@@ -1,12 +1,10 @@
 {
-    "name": "nox7atra.unity-figma-gradients.Editor",
+    "name": "nox7atra.unity-figma-gradients.Tests",
     "references": [
         "GUID:2a91f27dc72b45449827aced879ff73b"
     ],
     "includePlatforms": [],
-    "excludePlatforms": [
-        "Editor"
-    ],
+    "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
