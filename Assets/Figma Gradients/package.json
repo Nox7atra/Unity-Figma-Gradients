@@ -1,0 +1,13 @@
+{
+  "name": "com.nox7atra.unity-figma-gradients",
+  "displayName": "Unity-Figma-Gradients",
+  "version": "1.0.0",
+  "description": "A library that implements Figma gradients in Unity UI using shaders to reduce the build weight and the absence of compression artifacts on gradients.",
+  "keywords": [
+    "unity",
+    "figma",
+    "gradient"
+  ],
+  "author": "Nox7atra",
+  "license": "MIT"
+}
