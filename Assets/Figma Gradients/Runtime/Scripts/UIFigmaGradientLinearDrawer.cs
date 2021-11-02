@@ -109,7 +109,7 @@ namespace Nox7atra.UIFigmaGradients
             alphaKeys.Add(alphaKey);
          }
          _Gradient.SetKeys(colorKeys.ToArray(), alphaKeys.ToArray());
-         OnValidate();
+         Refresh();
       }
       
    }
