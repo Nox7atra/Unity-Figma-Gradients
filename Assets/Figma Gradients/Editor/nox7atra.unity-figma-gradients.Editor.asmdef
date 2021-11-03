@@ -1,0 +1,17 @@
+{
+    "name": "nox7atra.unity-figma-gradients.Editor",
+    "references": [
+        "GUID:2a91f27dc72b45449827aced879ff73b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [
+        "Editor"
+    ],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

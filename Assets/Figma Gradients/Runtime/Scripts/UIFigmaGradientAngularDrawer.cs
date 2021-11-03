@@ -46,7 +46,7 @@ namespace Nox7atra.UIFigmaGradients
                 newAlphaKeys[newAlphaKeys.Length - 1].time = 1;
                 _Gradient.colorKeys = newColorKeys;
                 _Gradient.alphaKeys = newAlphaKeys;
-                OnValidate();
+                Refresh();
             }
         }
     }
