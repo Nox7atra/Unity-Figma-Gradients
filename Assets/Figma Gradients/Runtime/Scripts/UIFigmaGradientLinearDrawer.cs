@@ -33,6 +33,12 @@ namespace Nox7atra.UIFigmaGradients
          base.Awake();
          Refresh();
       }
+      
+      public void SetGradient(Gradient gradient)
+      {
+         _Gradient = gradient;
+         Refresh();
+      }
 
       public Texture2D GenerateTexture(bool makeNoLongerReadable = false)
       {
